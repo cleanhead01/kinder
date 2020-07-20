@@ -1,0 +1,170 @@
+@charset "utf-8";
+@import "reset.css";
+
+.row { max-width:1167px; margin:0 auto;}
+#header {position: fixed; width: 100%; top: 0px; left: 0px; z-index: 99999; background-color: #ffffff; box-shadow: 0px 3px 5px #eeeeee;}
+
+.topmenu .row { position:relative }    
+.topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px;}
+.topmenu a {transition: all 1s;}
+.topmenu a:hover {color: rgba(255,255,255,1);}
+.topmenu .sns a:first-child span {font-size: 11px;}
+.topmenu .sns a {padding-right: 10px; font-size: 12.2px;}
+.topmenu .login a {padding-left: 10px; font-size: 11px;}
+.topmenu .login { position:absolute; top:0; right:0 }
+
+.logoNav { position:relative; height: 76px;}
+.logoNav h1 { color: #ffae3d; font-size: 26.25px; line-height: 76px; font-weight: bold;}
+.logoNav .nav { position:absolute; top:0; right:0; z-index: 9999;}
+.logoNav .nav .depth1 > li {display: inline-block; font-size: 15.7px; line-height: 76px; padding-left: 30px; font-weight: bold; position: relative;} /* 1단계 메뉴 */
+.logoNav .nav .depth1 > li:first-child {color: #ffd23c;}
+.logoNav .nav .depth1 > li > a:after {content: '\f107'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: #dddddd; padding-left: 10px;}
+.logoNav .nav .depth1 > li:first-child > a::after, .logoNav .nav .depth1 > li:nth-child(5) > a::after {visibility: hidden;} 
+/* display:none;은 이미지가 사라지는 동시에 사라진 만큼 간격도 줄어들지만 visibility: hidden;은 이미지의 자리는 그대로 유지하고 이미지만 사라지게 된다. */
+.logoNav .depth2 {position: absolute; top: 80%; left: 0px; width: 168px; background-color: #ffffff; border-radius: 5px; padding: 0px 15px; box-shadow: 0px 0px 15px #dddddd; display: none;} /* 서브메뉴 */ /* 메뉴 박스를 넓히고 싶으면 width의 값을 100%가 아닌 지정px로 바꾸면 넓어진다. */
+.logoNav .depth2::before {content: ""; position: absolute; bottom: 100%; left: 40px; 
+    border-bottom: 10px solid #ffffff;          /* 삼 만 */
+    border-left: 10px solid transparent;          /* 각 들 */ 
+    border-right: 10px solid transparent;}        /* 형 기 */
+.logoNav .depth1 > li:hover .depth2 {display: block;} /* 스르륵하고 나타나게 하려면 transition이 아닌 자바스크립트에서 해야됨 */
+.logoNav .depth2 > li {line-height: 38px; font-size: 16px; color: #ffd23c;}
+
+
+
+#section {padding-top: 117px;}
+.slideOuter {height: 600px; overflow: hidden; position: relative;}
+.slideOuter .arr {position: absolute; top: 50%; transform: translate(-50%); font-size: 80px; color: #ffffff;}
+.slideOuter .prev {left: 100px;}
+.slideOuter .next {right: 100px;}
+.slideOuter .dotBox {position: absolute; bottom: 20px; left: 50%; transform: translate(-50%);}
+.slideOuter .dotBox a {display: inline-block; width: 15px; height: 15px; background-color: #ffffff; opacity:0.6; border-radius: 50%;}
+.slideOuter .dotBox a.active {opacity:1;}
+.slideInner > div {height: 600px; background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;} /*표준모니터 높이는 768px / background-size: cover태그로 이미지의 크기를 맞추고 background-position: center;태그로 정중앙을 맞춘다. */
+.slideInner > div:first-child {background-image: url(../images/main-cover1.min.jpg);}
+.slideInner > div:last-child {background-image: url(../images/main-cover2.min.jpg);}
+.slideInner > div > .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #ffffff;}
+.slideInner .text > p:first-child {font-size: 70px; text-shadow: -3px 3px 5px #dddddd;}
+.slideInner .text > p:nth-child(2) {font-size: 19.25px; text-shadow: -2px 2px 5px rgba(0,0,0,0.5); margin: 20px 0px 30px 0px;}
+.slideInner .text > p:nth-child(3) > a {display:inline-block; font-size: 14px; padding: 14px 28px; border-radius: 4px;}
+.slideInner .text > p:nth-child(3) > a:nth-child(1) {background-color: rgba(0,0,0,0.5); color: #ffffff;}
+.slideInner .text > p:nth-child(3) > a:nth-child(1):hover {background-color: #ffd23c;}
+.slideInner .text > p:nth-child(3) > a:nth-child(2) {background-color: rgba(255,255,255,0.5); color: #000000;}
+.slideInner .text > p:nth-child(3) > a:nth-child(2):hover {color: #ffffff;}
+
+/* 어두운밝기를 위해서 필요한 만큼 복사를 해서 백그라운드의 색을 집어넣으며 만들어준다. */
+.slideInner > div::after {content: ""; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; background-color: rgba(0,0,0,0.3);}  /* after가 아닌 before를 쓰면 text라인에 z-index로 순서값을 안줘도됨 결과는 같음 */
+.slideInner > div:first-child {background-image: url(../images/main-cover1.min.jpg);}
+.slideInner > div:last-child {background-image: url(../images/main-cover2.min.jpg);}
+.slideInner > div > .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: #ffffff; z-index: 9999;} /*z-index로 텍스트의 순서를 정해서 올려준다.*/
+.slideInner .text > p:first-child {font-size: 70px; text-shadow: -3px 3px 5px #dddddd;}
+.slideInner .text > p:nth-child(2) {font-size: 19.25px; text-shadow: -2px 2px 5px rgba(0,0,0,0.5);}
+
+
+
+
+#section .title h2 {font-size: 28px; color: #222222; margin: 20px 0px 20px; font-weight: bold; text-align: center;}
+#section .title p {font-size: 14px; color: #333333; margin-bottom:56px; padding-bottom: 25px; text-align: center; position: relative;}
+#section .title p::after {content: ""; width: 100px; height: 2px; background-color: #f76f6f; position: absolute; bottom: 0px; left: 50%; margin-left: -50px; }
+#section .title p strong {font-weight: bold;}
+.act {padding: 80px 0px;}
+
+.act ul li { float:left; width:24%; background-size: auto; background-repeat: no-repeat; height: 186px; margin: 0px 0.5%; position: relative;}
+.act ul li div {position: absolute; top: 10px; left: 20px; right: 20px; bottom: 10px; color: #ffffff;}
+.act ul li div h3 {margin: 10px 0px; font-size: 19.25px; font-weight: bold;}
+.act ul li div p {font-size: 14px; margin: 15px 0px; line-height: 1.5;}
+.act ul li div a {padding: 5px 20px; font-size: 0.750em; line-height: 1.5; border-radius: 3px; color: #f8f9fa; border: 1px solid #f8f9fa; letter-spacing: 1.5px; transition: all 0.5s;}
+.act ul li div a:hover {color: #212529; background-color: #f8f9fa;}
+.act ul li:nth-child(1) {background-image: url(../images/main1.jpg); }
+.act ul li:nth-child(2) {background-image: url(../images/main2.jpg); }
+.act ul li:nth-child(3) {background-image: url(../images/main3.jpg); }
+.act ul li:nth-child(4) {background-image: url(../images/main4.jpg); }
+.act ul li:nth-child(1)::before {content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(48,120,210,0.5);}
+.act ul li:nth-child(2)::before {content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(255,174,61,0.6);}
+.act ul li:nth-child(3)::before {content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(48,205,210,0.5);}
+.act ul li:nth-child(4)::before {content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(247,111,111,0.5);}
+
+.curriInfo {padding: 84px 0px;}
+.curriBox > .column { float:left; width:31.66% }
+.curriBox > .column:nth-child(2) {margin: 0px 2.5%;}
+.curriBox > .column:first-child > div:first-child, .curriBox > .column:nth-child(3) > div:first-child {margin-bottom: 15.5px;}
+.curriBox > .column > div {position: relative;}
+.curriBox .overlay {position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; overflow: hidden;
+    background: -webkit-linear-gradient(left top, #ffd23c, #f00); 
+    background: -moz-linear-gradient(right bottom, #ffd23c, #f00); 
+    background: -o-linear-gradient(right bottom,  #ffd23c, #f00); 
+    background: linear-gradient(to right bottom, #ffd23c, #f00); opacity: 0; transition: all 0.5s;}
+.curriBox .column > div:hover .overlay {opacity: 0.8;}
+.curriBox .copy {position: absolute; bottom: -20px; left: 20px; right: 20px; color: #ffffff; transition: 0.5s;} /* position값에서 bottom의 -20값을 준 이유는 호버로 넘어갔을 때 밑에서 위로 올라오는 움직임을 위해서임 그 후에는 밑에 설명을 보시오*/
+.curriBox .column > div:hover .copy {bottom: 0px;} /*호버했을 때 글자가 아래에서 위로 올라오는 현상을 위해서 위에 bottom값을 -20을 주고 여기서 0으로 값을 다시 지정해준다.*/
+.curriBox .copy h3 {font-size: 24.5px; font-weight: bold;}
+.curriBox .copy p {font-size: 14px; margin: 15px 0px; line-height: 1.5; font-weight: bold;}
+
+.review { background:#fdeace; padding: 84px 0px;}
+.review ul li { float:left; width:31.66%; /*background-color: red;*/}
+.review ul li:nth-child(2) {margin: 0px 2.5%;}
+.review ul li > div {position: relative;}
+.review .quote {font-size: 30px; color: #ffffff; width: 56px; height: 56px; background-color: #ffae3d; text-align: center; line-height: 56px; border-radius: 50%; position: absolute; top: -28px; left: 10px; z-index: 99999;} /* z-index는 모든 태그들의 순서를 정하는 태그 */
+.review .blockQuote {background-color: #ffffff; font-size: 17.5px; padding: 40px; border-radius: 4px; font-style: italic; line-height: 1.5; position: relative; margin-bottom: 20px;}
+.review .blockQuote::after {content: ""; position: absolute; top: 100%; left: 30px; /* 삼각형의 위치를 위로 하고 싶으면 top100%가 아닌 bottom100%로 바꿔준다 */
+    border-top: 15px solid #ffffff;           /* 삼 만 */
+    border-left: 15px solid transparent;        /* 각 들 */
+    border-right: 15px solid transparent;       /* 형 기 */
+    border-bottom: 15px solid transparent;}     /* 위치에 따라 absolute의 위치를 바꿔줘야함 */   
+.review .client {padding: 0px 20px; font-weight: bold; letter-spacing: -1px;}
+.review .client p:nth-child(1) {font-size: 20px; color: #ffae3d;}
+.review .client a {color: #f76f6f;}
+.review .client p:nth-child(2) {font-size: 16px; color: rgba(255,255,255,0.7);}
+
+.bestChoice {background: url(../images/main-bottomBanner.min.jpg) no-repeat; height: 160px; background-size: cover; background-attachment: fixed; background-position: center; font-size: 19.25px; color: #ffffff; text-align: center; line-height: 160px; font-weight: bold; position: relative;} /* background-attachment:fixed 는 스크롤을 움직여도 배경이미지가 고정됨 */
+.bestChoice::before {content: ""; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: rgba(0,0,0,0.3);} /* 반투명의 백그라운드 속성을 주고 싶을 땐 꼭!!! before가 안붙은 태그목록에 position-relative속성을 줘야합 필수!!!!!!!!!!!!!!!!!!!!!!! */
+.bestChoice .row {position: relative;} /* 포지션값이 필요할 때는 부모 자식 상관없이 position-relative를 준다. */
+
+.csNnotice { background:#f5f5f5; padding: 34px 0px; color: #333333;}
+.csNnotice > .row > div {float:left; width:31.66%;}
+.csNnotice > .row > div:nth-child(2) {margin: 0px 2.5%;}
+.csNnotice h2 {font-size: 21px; color: #222222; letter-spacing: -1px; font-weight: bold; border-bottom: 2px solid #383d41; padding-bottom: 5px; margin-bottom: 10px;}
+.csNnotice .cscenter p:nth-child(1) ,
+.csNnotice .cscenter p:nth-child(2) {font-size: 19.25px; font-weight: bold;}
+.csNnotice .cscenter p:nth-child(3),
+.csNnotice .cscenter p:nth-child(4) {font-size: 14px; line-height: 1.5;}
+.csNnotice .consult {font-size: 14px; line-height: 1.5;}
+.csNnotice .consult a {display: block; padding: 10px 20px; color: #ffffff; background-color: rgba(0,0,0,0.5); width: 133px; text-align: center; margin-top: 10px; border-radius: 6px;}
+.csNnotice .notice li {padding: 2px;}
+.csNnotice .notice a {font-size: 14px;}
+.csNnotice .notice a::before {content: "ㆍ"; }      /* before로 글씨 앞에 추가하기 글자 ㅌ+한자 */
+.csNnotice .notice a::after {content: "NEW"; font-size: 10px; color: #f00; font-weight: bold;}  
+.csNnotice .more {position: absolute; top: 0px; right: 0px; padding: 5px 10px; font-size: 12px; color: #f00; background-color: ivory; border-radius: 5px;}
+.csNnotice .row div:nth-child(3) {position: relative;}
+
+
+
+
+#footer { text-align:center; font-size: 12.25px; }    
+.footerMenu { background:#eee; color: #333333; padding: 10px 0px;}
+.footerMenu a {padding-left: 0px 11px;}
+.footerMenu a::before {content: "|"; padding-right: 11px; font-size: 8px; position: relative; top: -1px;}
+.footerMenu a:first-child::before {display: none;}      /* 이런식으로 중간중간에 선넣는 방법도 있음 */
+
+.comInfo { background:#222; color: rgba(255,255,255,0.5); padding: 40px 0px;}
+.comInfo .sns a {font-size: 17px; padding: 0px 10px 10px 0px; display: inline-block;}
+
+.comInfo .info span {letter-spacing: -1px;}
+.comInfo .info span::before {content: "|"; padding-right: 7px; font-size: 6px; position: relative; top: -1px;}
+.comInfo .info span:first-child::before {display: none;}
+
+
+.copyright { background:#0a0a0a; font-size: 10.5px; padding: 10px 0px; color: #333333;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
