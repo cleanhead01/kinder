@@ -1,3 +1,3 @@
 # kinder
  
-https://cleanhead01.github.io/Newnike/
+https://cleanhead01.github.io/kinder/
