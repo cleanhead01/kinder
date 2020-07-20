@@ -1,3 +1,3 @@
 # kinder
  
-https://seokjh93.github.io/kinder/
+https://cleanhead01.github.io/kinder/
