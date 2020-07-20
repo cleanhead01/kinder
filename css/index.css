@@ -11,7 +11,7 @@
 .topmenu .sns a:first-child span {font-size: 11px;}
 .topmenu .sns a {padding-right: 10px; font-size: 12.2px;}
 .topmenu .login a {padding-left: 10px; font-size: 11px;}
-.topmenu .login { position:absolute; top:0; right:0 }
+.topmenu .login { position:absolute; top:0; right:0; color: #000;}
 
 .logoNav { position:relative; height: 76px;}
 .logoNav h1 { color: #ffae3d; font-size: 26.25px; line-height: 76px; font-weight: bold;}
