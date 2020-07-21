@@ -1,34 +1,6 @@
 @charset "utf-8";
 @import "reset.css";
-
-.row { max-width:1167px; margin:0 auto;}
-#header {position: fixed; width: 100%; top: 0px; left: 0px; z-index: 99999; background-color: #ffffff; box-shadow: 0px 3px 5px #eeeeee;}
-
-.topmenu .row { position:relative }    
-.topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px;}
-.topmenu a {transition: all 1s;}
-.topmenu a:hover {color: rgba(255,255,255,1);}
-.topmenu .sns a:first-child span {font-size: 11px;}
-.topmenu .sns a {padding-right: 10px; font-size: 12.2px;}
-.topmenu .login a {padding-left: 10px; font-size: 11px;}
-.topmenu .login { position:absolute; top:0; right:0; color: #000;}
-
-.logoNav { position:relative; height: 76px;}
-.logoNav h1 { color: #ffae3d; font-size: 26.25px; line-height: 76px; font-weight: bold;}
-.logoNav .nav { position:absolute; top:0; right:0; z-index: 9999;}
-.logoNav .nav .depth1 > li {display: inline-block; font-size: 15.7px; line-height: 76px; padding-left: 30px; font-weight: bold; position: relative;} /* 1단계 메뉴 */
-.logoNav .nav .depth1 > li:first-child {color: #ffd23c;}
-.logoNav .nav .depth1 > li > a:after {content: '\f107'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: #dddddd; padding-left: 10px;}
-.logoNav .nav .depth1 > li:first-child > a::after, .logoNav .nav .depth1 > li:nth-child(5) > a::after {visibility: hidden;} 
-/* display:none;은 이미지가 사라지는 동시에 사라진 만큼 간격도 줄어들지만 visibility: hidden;은 이미지의 자리는 그대로 유지하고 이미지만 사라지게 된다. */
-.logoNav .depth2 {position: absolute; top: 80%; left: 0px; width: 168px; background-color: #ffffff; border-radius: 5px; padding: 0px 15px; box-shadow: 0px 0px 15px #dddddd; display: none;} /* 서브메뉴 */ /* 메뉴 박스를 넓히고 싶으면 width의 값을 100%가 아닌 지정px로 바꾸면 넓어진다. */
-.logoNav .depth2::before {content: ""; position: absolute; bottom: 100%; left: 40px; 
-    border-bottom: 10px solid #ffffff;          /* 삼 만 */
-    border-left: 10px solid transparent;          /* 각 들 */ 
-    border-right: 10px solid transparent;}        /* 형 기 */
-.logoNav .depth1 > li:hover .depth2 {display: block;} /* 스르륵하고 나타나게 하려면 transition이 아닌 자바스크립트에서 해야됨 */
-.logoNav .depth2 > li {line-height: 38px; font-size: 16px; color: #ffd23c;}
-
+@import "common.css";
 
 
 #section {padding-top: 117px;}
@@ -135,36 +107,4 @@
 .csNnotice .notice a::after {content: "NEW"; font-size: 10px; color: #f00; font-weight: bold;}  
 .csNnotice .more {position: absolute; top: 0px; right: 0px; padding: 5px 10px; font-size: 12px; color: #f00; background-color: ivory; border-radius: 5px;}
 .csNnotice .row div:nth-child(3) {position: relative;}
-
-
-
-
-#footer { text-align:center; font-size: 12.25px; }    
-.footerMenu { background:#eee; color: #333333; padding: 10px 0px;}
-.footerMenu a {padding-left: 0px 11px;}
-.footerMenu a::before {content: "|"; padding-right: 11px; font-size: 8px; position: relative; top: -1px;}
-.footerMenu a:first-child::before {display: none;}      /* 이런식으로 중간중간에 선넣는 방법도 있음 */
-
-.comInfo { background:#222; color: rgba(255,255,255,0.5); padding: 40px 0px;}
-.comInfo .sns a {font-size: 17px; padding: 0px 10px 10px 0px; display: inline-block;}
-
-.comInfo .info span {letter-spacing: -1px;}
-.comInfo .info span::before {content: "|"; padding-right: 7px; font-size: 6px; position: relative; top: -1px;}
-.comInfo .info span:first-child::before {display: none;}
-
-
-.copyright { background:#0a0a0a; font-size: 10.5px; padding: 10px 0px; color: #333333;}
-
-
-
-
-
-
-
-
-
-
-
-
-
 
