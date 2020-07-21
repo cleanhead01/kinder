@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 strong, th { font-weight:normal }    
 address, em { font-style:normal }
 .blind {font-size: 0px; position: absolute; width: 0px; height: 0px; overflow: hidden; text-indent: -9999px; line-height: 0;}
+header, footer, section, article ,aside, nav, main, figure {display: block;}
 
 
 
