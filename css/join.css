@@ -1,3 +1,138 @@
 @charset "utf-8";
 @import "reset.css";
 @import "common.css";
+
+
+::placeholder {color: pink; font-weight: bold;}
+#join_page {
+    padding: 217px 0px 100px;
+}
+#join_page h2 {
+    text-align: center; font-size: 30px;
+    padding-bottom: 30px;
+}
+.join_form .w320 {
+    width: 320px;
+}
+.join_form .w160 {
+    width: 160px;
+}
+.join_form .w70p {
+    width: 70%;
+}
+.join_form .mb3 {
+    margin-bottom: 5px;
+}
+.join_form .info_content span {
+    line-height: 45px;
+}
+.join_form .tit_lbl {
+    display: inline-block;
+    width: 20%; line-height: 45px;    
+    font-weight: bold; font-size: 17px;
+    letter-spacing: -2px; padding-left: 20px;
+}
+.join_form .info_content {
+    display: inline-block;
+    width: 79%;
+    vertical-align: top;        /* vertical-align: top값을 줘서 .tit_lbl와 높이를 맞춰준다 */
+}
+.join_form .info_content select,
+.join_form .info_content input[type=text],
+.join_form .info_content input[type=password],
+.join_form .info_content input[type=number] {
+    height: 45px;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 0px 1em;
+    vertical-align: top;
+}
+.join_form .info_content select:hover {
+    cursor: pointer;
+    background: red; color: #ffffff;
+}
+.join_form .info_content button {
+    height: 45px;
+    width: 80px;
+    margin-left: 10px;
+    border: 1px solid #cccccc; border-radius: 10px;
+}
+.join_form .info_content button:hover {
+    cursor: pointer; 
+    background: #dddddd;
+}
+.join_form .info_list {
+    padding: 10px 0px;
+    border-bottom: 1px solid #cccccc;
+}
+.join_form .info_list li {
+    padding: 8px 0px;
+}
+.join_form .info_pilsoo {
+    padding-left: 20px; padding-bottom: 10px;
+    border-bottom: 2px solid #000000;
+    font-size: 15px; color: #f00;
+}
+.join_form .pilsoo_item {
+    position: relative;
+}
+.join_form .pilsoo_item::before {
+    content: "*";
+    position: absolute; left: 5px; top: 3px;
+    width: 15px;
+    font-weight: bold; font-size: 17px;
+    color: #f00;
+}
+.join_form .gender_area label {
+    line-height: 45px;
+    padding-right: 20px;
+}
+.join_form .hobby_area label {
+    line-height: 45px;
+    padding-right: 15px;
+}
+.join_form .info_content textarea {
+    width: 70%; height: 245px; line-height: 1.5;
+    border: 1px solid #cccccc;
+    font-size: 15px; color: #444444;
+    letter-spacing: -1px;
+    padding: 0px;
+    resize: none; /* 문의내용 박스 크기를 임의조정 할 수 없게 만듬 */
+}
+.join_form .btn {
+    margin-top: 20px;
+    text-align: center;
+}
+.join_form .btn input {
+    width: 80px; height: 40px;
+    background: #000000; color: #ffffff;
+    border: none; border-radius: 10px;
+    font-size: 18px; margin: 0px 20px;
+}
+.join_form .btn input[type=submit] {
+    background: red;
+}
+/* label {
+    width: 200px; line-height: 30px;
+    display: inline-block;
+    - label은 width, height값이 안먹혀서 display: inline-block값을 줘야 넓이 높이값이 적용됨 -
+    vertical-align: top;
+    - vertical-align: top;을 input이랑 동일하게 위치를 맞춤 -
+}
+input {
+    width: 300px; height: 30px;
+    vertical-align: top;
+    - vertical-align: top;을 label이랑 동일하게 위치를 맞춤 -
+} */
+
+
+
+
+
+
+
+
+
+
+
+
