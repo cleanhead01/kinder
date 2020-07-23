@@ -28,8 +28,13 @@
 
 #header {position: fixed; width: 100%; top: 0px; left: 0px; z-index: 99999; background-color: #ffffff; box-shadow: 0px 3px 5px #eeeeee;}
 
+.topmenu .search {position: absolute; top: 0px; left: 150px;}
+.topmenu .search fieldset {border: 1px solid #cccccc; background: #ffffff; padding-right: 5px; border-radius: 1px;}
+.topmenu .search input {border: none; padding: 4px 0.5em;}
+.topmenu .search button {border: none; background: #ffffff; cursor: pointer; font-size: 17px;}
+
 .topmenu .row { position:relative }    
-.topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px;}
+.topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px; position: relative;}
 .topmenu a {transition: all 1s;}
 .topmenu a:hover {color: rgba(255,255,255,1);}
 .topmenu .sns a:first-child span {font-size: 11px;}
