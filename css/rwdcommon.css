@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+
+
+
+@media only screen and (max-width: 1170px) {
+    .row {
+        padding: 0px 50px;
+    }
+    .topmenu .login {
+        position:absolute; top:0; right: 10px; 
+        color: #000;
+    }
+}
+@media only screen and (max-width: 1010px) {
+    .logoNav {
+        position:relative; 
+        height: auto;
+    }
+    .logoNav h1 {
+        color: #ffae3d;
+        font-size: 26.25px; font-weight: bold; 
+        padding: 24.875px 0px 0px;
+        text-align: center;
+    }
+    .logoNav .nav {
+        position: static; top:0; right:0;
+        text-align: center;
+    }
+    /* position: static은 position 속성을 취소하는 태그 position을 안쓰는거랑 똑같고 top이나 right값이 필요없음 */
+}
+@media only screen and (max-width: 896px) {
+    .topmenu .login {
+        position:absolute; top:0; right: 10px; 
+        color: #000; display: none;
+    }
+    .topmenu .search {
+        position: absolute; top: 0px; right: 10px; transform: translate(0%);
+    }
+    .logoNav h1 {
+        color: #ffae3d;
+        font-size: 26.25px; font-weight: bold; 
+        padding: 30px 0px 30px;
+        text-align: center;
+    }
+    .logoNav .open_nav {
+        display: block;
+        position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+        font-size: 25px;
+    }
+    .logoNav .close_nav {
+        display: none;
+        position: absolute; top: 50%; right: 10px; transform: translateY(-50%);
+        font-size: 25px;
+    }
+    .logoNav .nav {
+        display: none;
+    }
+}
