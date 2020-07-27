@@ -24,14 +24,17 @@
 /* position: static;       position: static는 none과 같은 속성 position의 효과가 사라짐 */
 
 
-
+카페25 홈페이지 디자인에 기업 서비스
 
 #header {position: fixed; width: 100%; top: 0px; left: 0px; z-index: 99999; background-color: #ffffff; box-shadow: 0px 3px 5px #eeeeee;}
 
+.topmenu .search_box {position: absolute; top: 0px; left: 150px;}
+.topmenu .search_box input {border: none;}
+
 .topmenu .row { position:relative }    
 .topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px;}
-.topmenu a {transition: all 1s;}
-.topmenu a:hover {color: rgba(255,255,255,1);}
+/* .topmenu a {transition: all 1s;} */
+.topmenu a:hover {color: rgba(255,255,255,1); transition: all 1s;}
 .topmenu .sns a:first-child span {font-size: 11px;}
 .topmenu .sns a {padding-right: 10px; font-size: 12.2px;}
 .topmenu .login a {padding-left: 10px; font-size: 11px;}
