@@ -152,12 +152,14 @@
                                 <input class="w160" type="text" id="email_lbl">
                                 <span>@</span>
                                 <input class="w160" type="text" id="domain" disabled> <!-- 지정 value의 값이 나오면 disabled의 속성으로 커서가 옮겨짐 -->
-                                <select id="email_choice" class="w160">
-                                    <option value="nochoice">이메일 선택</option>
-                                    <option value="naver.com">네이버</option>
-                                    <option value="daum.net">다음</option>
-                                    <option value="self">직접입력</option>
-                                </select>
+                                <label class="email_box">
+                                    <select id="email_choice" class="w160">
+                                        <option value="nochoice">이메일 선택</option>
+                                        <option value="naver.com">네이버</option>
+                                        <option value="daum.net">다음</option>
+                                        <option value="self">직접입력</option>
+                                    </select>
+                                </label>
                             </div>
                         </li>
                         <li>
@@ -198,8 +200,8 @@
                                 <label for="male">남</label>
                                 <input type="radio" name="gender" id="female" value="여">
                                 <label for="female">여</label>
-                                <input type="radio" name="gender" id="all" value="둘다">
-                                <label for="all">둘다</label>
+                                <input type="radio" name="gender" id="two" value="둘다">
+                                <label for="two">둘다</label>
                             </div>
                         </li>
                         <li>
