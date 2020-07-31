@@ -107,14 +107,14 @@
     line-height: 45px;
     padding-right: 20px;
 }
-.join_form .gender_area label::before {
+/* .join_form .gender_area label::before {
     content: "\f058"; font-family: 'Font Awesome 5 Free'; font-weight: 400;
     color: #dddddd; padding-right: 5px;
 }
 .join_form .gender_area input[type=radio]:checked + label::before {
     content: "\f058"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
     color: blue; padding-right: 5px;
-}
+} */
 .join_form .gender_area input[type=radio] {
     display: none;
 }
@@ -122,15 +122,51 @@
     line-height: 45px;
     padding-right: 15px;
 }
-.join_form .hobby_area label::before {
+/* .join_form .hobby_area label::before {
     content: "\f7fb"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
-    display: inline-block; /* label은 순수inline이기 때문에 속성값을 넣고 싶으면 인라인블록으로 바꿔야 한다.*/
+    display: inline-block; ////label은 순수inline이기 때문에 속성값을 넣고 싶으면 인라인블록으로 바꿔야 한다.////
     color: beige; padding-right: 5px;
     transform: scale(1.5);
 }
 .join_form .hobby_area input[type=checkbox]:checked + label::before {
     content: "\f6d7"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
     color: lightgreen; padding-right: 5px;
+} */
+/* 아이콘은 위아래 두가지 방법이 있다 ------------------------------------------------------------------------ */
+.join_form .gender_area label::before {
+    content: "";
+    display: inline-block;
+    color: black; margin-right: 5px;
+    width: 28px; height: 28px;
+    background: url(../images/sprite_img.png) no-repeat;
+    background-size: auto; background-position: -112px -246px;
+    transform: scale(0.8) translateY(10px); 
+}
+.join_form .gender_area input[type=radio]:checked + label::before {
+    content: ""; 
+    display: inline-block;
+    color: blue; margin-right: 5px;
+    width: 28px; height: 28px;
+    background: url(../images/sprite_img.png) no-repeat;
+    background-size: auto; background-position: -208px -246px;
+}
+.join_form .hobby_area label::before {
+    content: "";
+    display: inline-block; /* label은 순수inline이기 때문에 속성값을 넣고 싶으면 인라인블록으로 바꿔야 한다. */
+    margin-right: 5px;
+    width: 20px; height: 20px;
+    background-image: url(../images/sprite_img.png);
+    background-repeat: no-repeat; background-size: auto; background-position: -296px -114px;
+    position: relative; top: 5px;
+    transform: scale(0.8);
+    /* 백그라운드 이미지의 사이즈를 조절하는 방법은 scale속성이 편함 */
+}
+.join_form .hobby_area input[type=checkbox]:checked + label::before {
+    content: "";
+    margin-right: 5px;
+    background-image: url(../images/sprite_img.png);
+    background-repeat: no-repeat; background-size: auto; background-position: -138px -182px;
+    /* 백그라운드 이미지의 사이즈를 조절하는 방법은 scale속성이 편함 */
 }
 .join_form .hobby_area input[type=checkbox] {
     display: none;
