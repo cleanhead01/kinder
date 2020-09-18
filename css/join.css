@@ -1,219 +1,46 @@
 @charset "utf-8";
-@import "reset.css";
-@import "common.css";
-@import "rwdcommon.css";
+.join_after { display:none }
+.join_after.on { display:block }
+::placeholder { color:pink }
+#join_page { padding:217px 0 100px }
+#join_page h2 { text-align:center; font-size:30px;
+    padding-bottom:30px }
+.join_form .info_pilsoo { padding-left:20px; padding-bottom:10px; border-bottom:2px solid #000; font-size:15px; color:#f00; }    
+.join_form .pilsoo_item { position:relative }
+.join_form .pilsoo_item:before {content:"*"; position:absolute; left:5px; top:3px; width:15px; font-weight:bold; font-size:17px; color:#f00; }    
 
-
-::placeholder {color: pink; font-weight: bold;}
-#join_page {
-    padding: 217px 0px 100px;
-}
-#join_page h2 {
-    text-align: center; font-size: 30px;
-    padding-bottom: 30px;
-}
-.join_form .w320 {
-    width: 320px;
-}
-.join_form .w160 {
-    width: 160px;
-}
-.join_form .w70p {
-    width: 70%;
-}
-.join_form .mb3 {
-    margin-bottom: 5px;
-}
-.join_form .info_content span {
-    line-height: 45px;
-}
-.join_form .tit_lbl {
-    display: inline-block;
-    width: 20%; line-height: 45px;    
-    font-weight: bold; font-size: 17px;
-    letter-spacing: -2px; padding-left: 20px;
-}
-.join_form .info_content {
-    display: inline-block;
-    width: 79%;
-    vertical-align: top;        /* vertical-align: top값을 줘서 .tit_lbl와 높이를 맞춰준다 */
-}
-.join_form .info_content select,
+.join_form .info_list {padding:10px 0; border-bottom:1px solid #ccc;}
+.join_form .info_list li {padding:8px 0}
+.join_form .tit_lbl { display:inline-block; width:20%; line-height:45px; font-weight:bold; font-size:17px; letter-spacing: -2px; padding-left:20px;  }
+.join_form .info_content { display:inline-block; width:79%; vertical-align:top }
 .join_form .info_content input[type=text],
 .join_form .info_content input[type=password],
-.join_form .info_content input[type=number] {
-    height: 45px;
-    border: 1px solid #cccccc;
-    border-radius: 10px;
-    padding: 0px 1em;
-    vertical-align: top;
-}
-/* select에서 뒤에 화살표 없애는 방법 ↓ ---------------------------------------------------------------------- */
-.join_form .info_content select {
-    -webkit-appearance: none; 
-    appearance: none;
-    background: transparent;
-}
-.join_form .info_content select::-ms-expand {
-    display: none;
-}
-.join_form .info_content .email_box::after {
-    content: "\f0dd"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
-    color: blue;
-    line-height: 45px; display: inline-block;
-    transform: translateX(-30px);
-}
-/* ※주의사항※ 버전마다 다름..... select를 label로 감싸안았지만 학원컴퓨터 버전에서 가능함 다른버전은 모름 */
-/* select 화살표 문제는 잠시 보류 / 오류가 많아서 이미지는 after가 아닌 background로 주는 것을 추천 */
-/* select에서 뒤에 화살표 없애는 방법 ↑ ---------------------------------------------------------------------- */
-.join_form .info_content select:hover {
-    cursor: pointer;
-    background: red; color: #ffffff;
-}
-.join_form .info_content button {
-    height: 45px;
-    width: 80px;
-    margin-left: 10px;
-    border: 1px solid #cccccc; border-radius: 10px;
-}
-.join_form .info_content button:hover {
-    cursor: pointer; 
-    background: #dddddd;
-}
-.join_form .info_list {
-    padding: 10px 0px;
-    border-bottom: 1px solid #cccccc;
-}
-.join_form .info_list li {
-    padding: 8px 0px;
-}
-.join_form .info_pilsoo {
-    padding-left: 20px; padding-bottom: 10px;
-    border-bottom: 2px solid #000000;
-    font-size: 15px; color: #f00;
-}
-.join_form .pilsoo_item {
-    position: relative;
-}
-.join_form .pilsoo_item::before {
-    content: "*";
-    position: absolute; left: 5px; top: 3px;
-    width: 15px;
-    font-weight: bold; font-size: 17px;
-    color: #f00;
-}
-/* 아이콘으로 체크박스 만드는 방밥 ↓ ------------------------------------------------------------------------ */
-.join_form .gender_area label {
-    line-height: 45px;
-    padding-right: 20px;
-}
-/* .join_form .gender_area label::before {
-    content: "\f058"; font-family: 'Font Awesome 5 Free'; font-weight: 400;
-    color: #dddddd; padding-right: 5px;
-}
-.join_form .gender_area input[type=radio]:checked + label::before {
-    content: "\f058"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
-    color: blue; padding-right: 5px;
-} */
-.join_form .gender_area input[type=radio] {
-    display: none;
-}
-.join_form .hobby_area label {
-    line-height: 45px;
-    padding-right: 15px;
-}
-/* .join_form .hobby_area label::before {
-    content: "\f7fb"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
-    display: inline-block; ////label은 순수inline이기 때문에 속성값을 넣고 싶으면 인라인블록으로 바꿔야 한다.////
-    color: beige; padding-right: 5px;
-    transform: scale(1.5);
-}
-.join_form .hobby_area input[type=checkbox]:checked + label::before {
-    content: "\f6d7"; font-family: 'Font Awesome 5 Free'; font-weight: 900;
-    color: lightgreen; padding-right: 5px;
-} */
-/* 아이콘은 위아래 두가지 방법이 있다 ------------------------------------------------------------------------ */
-.join_form .gender_area label::before {
-    content: "";
-    display: inline-block;
-    color: black; margin-right: 5px;
-    width: 28px; height: 28px;
-    background: url(../images/sprite_img.png) no-repeat;
-    background-size: auto; background-position: -112px -246px;
-    transform: scale(0.8) translateY(10px); 
-}
-.join_form .gender_area input[type=radio]:checked + label::before {
-    content: ""; 
-    display: inline-block;
-    color: blue; margin-right: 5px;
-    width: 28px; height: 28px;
-    background: url(../images/sprite_img.png) no-repeat;
-    background-size: auto; background-position: -208px -246px;
-}
-.join_form .hobby_area label::before {
-    content: "";
-    display: inline-block; /* label은 순수inline이기 때문에 속성값을 넣고 싶으면 인라인블록으로 바꿔야 한다. */
-    margin-right: 5px;
-    width: 20px; height: 20px;
-    background-image: url(../images/sprite_img.png);
-    background-repeat: no-repeat; background-size: auto; background-position: -296px -114px;
-    position: relative; top: 5px;
-    transform: scale(0.8);
-    /* 백그라운드 이미지의 사이즈를 조절하는 방법은 scale속성이 편함 */
-}
-.join_form .hobby_area input[type=checkbox]:checked + label::before {
-    content: "";
-    margin-right: 5px;
-    background-image: url(../images/sprite_img.png);
-    background-repeat: no-repeat; background-size: auto; background-position: -138px -182px;
-    /* 백그라운드 이미지의 사이즈를 조절하는 방법은 scale속성이 편함 */
-}
-.join_form .hobby_area input[type=checkbox] {
-    display: none;
-}
-/* 아이콘으로 체크박스 만드는 방밥 ↑ ------------------------------------------------------------------------ */
+.join_form .info_content input[type=date],
+.join_form .info_content select { height:45px; border: 1px solid #ccc; padding:0 1em; vertical-align:top;  }
+.join_form .w320 { width:320px }
+.join_form .w160 { width:160px }
+.join_form .info_content span { line-height:45px; }
+.join_form .w70p { width:70% }
+.join_form .mb3 { margin:0px 0 5px}
+.join_form .info_content button { height:45px; width:80px; border:1px solid #ccc; border-radius:5px }
+.join_form .info_content button:hover { cursor:pointer; background:#ddd }
+.join_form .gender_area label,
+.join_form .hobby_area label
+{ line-height:45px; padding-right:15px  }
 .join_form .info_content textarea {
-    width: 70%; height: 245px; line-height: 1.5;
-    border: 1px solid #cccccc;
-    font-size: 15px; color: #444444;
-    letter-spacing: -1px;
-    padding: 0px;
-    resize: none; /* 문의내용 박스 크기를 임의조정 할 수 없게 만듬 */
-}
-.join_form .btn {
-    margin-top: 20px;
-    text-align: center;
-}
-.join_form .btn input {
-    width: 80px; height: 40px;
-    background: #000000; color: #ffffff;
-    border: none; border-radius: 10px;
-    font-size: 18px; margin: 0px 20px;
-}
+    height: 245px; width:70%;
+    border:1px solid #ccc; 
+    /* textarea는 글꼴 관련 스타일을 상위태그에서 상속받지 못함 */
+    font-size: 15px; letter-spacing: -1px;
+    color: #444; padding: 10px; line-height: 1.5;
+    resize:none; }
+.join_form .btn { margin-top:20px; text-align:center }    
+.join_form .btn input { width:80px; height:40px; 
+    background:#000; color:#fff; 
+    border:none; border-radius:5px; 
+    font-size:18px; margin:0 20px }
 .join_form .btn input[type=submit] {
-    background: red;
-}
-/* label {
-    width: 200px; line-height: 30px;
-    display: inline-block;
-    - label은 width, height값이 안먹혀서 display: inline-block값을 줘야 넓이 높이값이 적용됨 -
-    vertical-align: top;
-    - vertical-align: top;을 input이랑 동일하게 위치를 맞춤 -
-}
-input {
-    width: 300px; height: 30px;
-    vertical-align: top;
-    - vertical-align: top;을 label이랑 동일하게 위치를 맞춤 -
-} */
-
-
-
-
-
-
-
-
-
+    background:red }
 
 
 

@@ -1,102 +1,122 @@
 @charset "utf-8";
+.row { max-width:1167px; margin:0 auto; }
+.skip a { display:block;
+    background:#000; color:#fff;
+    text-align:center; width: 1px;  height: 1px;
+    overflow:hidden; position:absolute; 
+    top:-100px }
+.skip a:focus { width: 100%;  height:auto;
+    padding:10px 0px; position:fixed;
+    top:0px; z-index:9999999; }    
 
-
-
-.row { max-width:1167px; margin:0 auto;}
-
-
-.skip a {
-    display: block;
-    background: #000; color: #ffffff;
-    text-align: center;
-    width: 1px; height: 1px;
-    overflow: hidden;
-    position: absolute; top: -100px;
-}   /* 부모가 없을 때 다음 부모를 찾는데 다음 부모가 body여서 position:relative를 안줘도됨 */
-.skip a:focus {
-    width: 100%; height: auto;
-    padding: 10px 0px;
-    position: fixed; top: 0px;
-    z-index: 99999;
-}
-
-
-/* position: static;       position: static는 none과 같은 속성 position의 효과가 사라짐 */
-
-
-#header {position: fixed; width: 100%; top: 0px; left: 0px; z-index: 99999; background-color: #ffffff; box-shadow: 0px 3px 5px #eeeeee;}
-
-
-
-
-.topmenu .search {
-    position: absolute; top: 0px; right: 50%; transform: translate(50%);
-}
-.topmenu .search fieldset {
-    border: 1px solid #cccccc;
-    background: #ffffff;
-    padding-right: 5px;
-    border-radius: 5px;
-}
-.topmenu .search input {
-    border: none; 
-    padding: 4px 0.5em;
-}
-.topmenu .search button {
-    border: none;
-    background: #ffffff;
-    cursor: pointer;
-    font-size: 17px;
-}
-
-
-
-
+#header { position:fixed; width:100%; 
+    top:0; left:0; z-index:999999; background:#fff;
+    box-shadow:0px 3px 3px #eee }
 .topmenu .row { position:relative }    
-.topmenu { background:#f76f6f; color: rgba(255,255,255,0.7); padding: 10px 0px; letter-spacing: -0.5px; position: relative;}
-.topmenu a {transition: all 1s;}
-.topmenu a:hover {color: rgba(255,255,255,1);}
-.topmenu .sns a:first-child span {font-size: 11px;}
-.topmenu .sns a {padding-right: 10px; font-size: 12.2px;}
-.topmenu .login a {padding-left: 10px; font-size: 11px;}
-.topmenu .login { position:absolute; top:0; right:0; color: #000;}
+.topmenu { background:#f76f6f;
+    color:rgba(255,255,255,0.7);
+    padding:10px 0; letter-spacing:-0.5px; }
+.topmenu a { transition:all 0.5s;}     
+.topmenu a:hover {color:rgb(255, 255, 255, 1) }    
+.topmenu .sns a { padding-right:10px; font-size:12.2px;  }
+.topmenu .sns a:first-child span { font-size:11px }
+.topmenu .search { position:absolute; top:0; right:50%; transform:translate(50%) }
+.topmenu .search fieldset { border:2px solid #fff;
+    border-radius:3px; height:25px; }
+.topmenu .search input { border:none; background:none; color:#fff; padding-left:0.5em;
+outline:none; width:200px }
+.topmenu .search ::placeholder { color:#fff }
+.topmenu .search button { background:#fff; color:#000;  border:none; height:21px; 
+padding:0px 5px; vertical-align:top; font-size:11px;
+float:right }
 
-.logoNav { position:relative; height: 76px;}
-.logoNav h1 { color: #ffae3d; font-size: 26.25px; padding: 24.875px 0px 24px; font-weight: bold; line-height: 15.75px;}
-.logoNav .open_nav {display: none;}
-.logoNav .close_nav {display: none;}
-.logoNav .nav { position:absolute; top:0; right:0; z-index: 9999;}
-.logoNav .nav .depth1 > li {display: inline-block; font-size: 15.7px; font-weight: bold; position: relative;} /* 1단계 메뉴 */
-.logoNav .nav .depth1 > li > a {padding: 24.875px 0px 24px 30px; display: block;}
-.logoNav .nav .depth1 > li:first-child {color: #ffd23c;}
-.logoNav .nav .depth1 > li > a:after {content: '\f107'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: #dddddd; padding-left: 10px;}
-.logoNav .nav .depth1 > li:first-child > a::after, .logoNav .nav .depth1 > li:nth-child(5) > a::after {visibility: hidden;} 
-/* display:none;은 이미지가 사라지는 동시에 사라진 만큼 간격도 줄어들지만 visibility: hidden;은 이미지의 자리는 그대로 유지하고 이미지만 사라지게 된다. */
-.logoNav .depth2 {position: absolute; top: 80%; left: 0px; width: 168px; background-color: #ffffff; border-radius: 5px; padding: 0px 15px; box-shadow: 0px 0px 15px #dddddd; display: none;} /* 서브메뉴 */ /* 메뉴 박스를 넓히고 싶으면 width의 값을 100%가 아닌 지정px로 바꾸면 넓어진다. */
-.logoNav .depth2::before {content: ""; position: absolute; bottom: 100%; left: 40px; 
-    border-bottom: 10px solid #ffffff;          /* 삼 만 */
-    border-left: 10px solid transparent;          /* 각 들 */ 
-    border-right: 10px solid transparent;}        /* 형 기 */
-.logoNav .depth1 > li:hover .depth2 {display: block;} /* 스르륵하고 나타나게 하려면 transition이 아닌 자바스크립트에서 해야됨 */
-.logoNav .depth2 > li {line-height: 38px; font-size: 16px; color: #ffd23c;}
+.topmenu .login { position:absolute; top:0; right:0; color:#000; display:none }
+.topmenu .login.on { display:block }
+.topmenu .login a { padding-left:10px; font-size:11px }
+.topmenu .logout { position:absolute; top:0; right:0; color:#000; display:none }
+.topmenu .logout.on { display:block }
+.topmenu .logout a { padding-left:10px; font-size:11px }
+
+.logoNav { position:relative; height:76px;  }
+.logoNav h1 { color:#ffae3d; 
+    font-size:26.25px; padding:25.875px 0px 23.875px;
+    font-weight:bold;  line-height:15.75px;}
+
+.logoNav .open_nav { display:none } 
+.logoNav .close_nav { display:none }    
+.logoNav .nav { position:absolute; top:0; right:0; }
+.logoNav .nav .depth1 > li { display:inline-block; 
+    font-size:15.75px;  
+    position:relative; 
+    font-weight:bold;     
+    transition:all 0.5s }
+.logoNav .nav .depth1 > li > a {
+    padding:27.5px 0px 27.5px 30px;
+    display:inline-block;
+}
+    
+.logoNav .nav .depth1 > li:hover { 
+    color:#ffd23c; }
+.logoNav .nav .depth1 > li:first-child { color:#ffd23c }
+.logoNav .nav .depth1 > li > a:after { 
+    content:'\f078';
+    font-family:'Font Awesome 5 Free';
+    font-weight:900;
+    color:#ddd; padding-left:10px; }
+.logoNav .nav .depth1 > li:first-child > a:after,
+.logoNav .nav .depth1 > li:nth-child(5) > a:after { visibility: hidden;}
+.logoNav .depth2 { position:absolute; top:85%; 
+    left:0; width:168px; background:#fff;
+    border-radius:5px; padding:0 15px;
+    box-shadow:0px 0px 15px #ddd; display:none }
+.logoNav .depth2:before { content:'';
+    position:absolute; bottom:100%; left:40px;
+    border-bottom:10px solid #fff;
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+}    
+/* .logoNav .depth1 > li:hover .depth2 { display:block }     */
+.logoNav .depth2 > li { line-height:38px;
+    font-size:16px; color:#ffae3d }    
 
 
+#footer { text-align:center; font-size:12.25px }    
+.footerMenu { background:#eee;
+    color:#333; padding:10px }
+.footerMenu a { padding-left:11px; }  
+.footerMenu a:before { content:'|'; 
+    padding-right:11px;
+    font-size:6px; position:relative; top:-1px;
+}  
+.footerMenu a:first-child:before { 
+    display:none }
+
+.comInfo { background:#222;
+    color:rgba(255,255,255,0.5);
+    padding:40px 0 }
+.comInfo .sns a { font-size:17px; padding:0px 10px 10px;
+    display:inline-block; }    
+.comInfo .info span { letter-spacing:-1px; 
+    padding-left:5px }  
+.comInfo .info span:before { content:'|'; 
+    padding-right:7px; font-size:6px; 
+    position:relative; top:-1px; 
+}  
+.copyright { background:#0a0a0a;
+    font-size:10.5px; padding:10px 0px; 
+    color:#333; }
+        
+.introAni {
+    position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px;
+    background: rgba(0,0,0,1);
+    z-index: 99999999999999999999999;
+    font-size: 70px;
+    color: #fff;
+}
+.introAni i {
+    position: absolute; top: 45%; /* left: 50%;*/
+    width: 100%; text-align: center;
+    transform: translateY(-50%);
+}
 
 
-
-
-#footer { text-align:center; font-size: 12.25px; }    
-.footerMenu { background:#eee; color: #333333; padding: 10px 0px;}
-.footerMenu a {padding-left: 0px 11px;}
-.footerMenu a::before {content: "|"; padding-right: 11px; font-size: 8px; position: relative; top: -1px;}
-.footerMenu a:first-child::before {display: none;}      /* 이런식으로 중간중간에 선넣는 방법도 있음 */
-
-.comInfo { background:#222; color: rgba(255,255,255,0.5); padding: 40px 0px;}
-.comInfo .sns a {font-size: 17px; padding: 0px 10px 10px 0px; display: inline-block;}
-
-.comInfo .info span {letter-spacing: -1px;}
-.comInfo .info span::before {content: "|"; padding-right: 7px; font-size: 6px; position: relative; top: -1px;}
-.comInfo .info span:first-child::before {display: none;}
-
-
-.copyright { background:#0a0a0a; font-size: 10.5px; padding: 10px 0px; color: #333333;}

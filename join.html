@@ -1,283 +1,105 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 - 새싹유치원</title>
-    <link rel="stylesheet" href="css/join.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
-    <!-- [if lte IE 8]>
-        8버전보다 작거나 같은
-    <![endif]-->
-    <!--[if lt IE 9]>   
-        9버전보다 작은
-    <![endif]-->
-</head>
-<body>
-    
-    <div class="skip">
-        <a href="#section">본문 바로가기</a> <!-- #section을 하면 section이 있는 구역으로 감 -->
-    </div>
-
-    <header id="header">
-        <div class="topmenu">
-            <div class="row">
-                <div class="sns">
-                    <a href="#"><i class="fas fa-phone-square"></i> <span>02-1234-5678</spa></a>
-                    <a href="#"><i class="fab fa-instagram"></i>
-                        <span class="blind">
-                            인스타그램
-                        </span>
-                    </a>
-                    <a href="#"><i class="fas fa-sms"></i>
-                        <span class="blind">
-                            문자전송
-                        </span>
-                    </a>
-                </div>
-                <div class="search">
-                    <form action="#" method="post">
-                        <fieldset>
-                            <legend>검색</legend>
-                            <input type="text" placeholder="검색어 입력">
-                            <button type="submit">
-                                <span class="blind">검색</span>
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="login">
-                    <a href="login.html">로그인</a>
-                    <a href="join.html">회원가입</a>
-                    <a href="#">회원1:1문의</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="logoNav row">
-            <h1>
-                <a href="index.html">CompanyName</a>
-            </h1>
-            <div class="open_nav">
-                <span class="blind">메뉴열기</span><i class="fas fa-bars"></i>
-            </div>
-            <div class="close_nav">
-                <span class="blind">메뉴닫기</span>
-                <i class="fas fa-times"></i>
-            </div>
-            <nav class="nav">
-                <ul class="depth1">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">유치원소개</a>
-                        <ul class="depth2">
-                            <li><a href="#">원장인사말1</a></li>
-                            <li><a href="#">원장인사말2</a></li>
-                            <li><a href="#">연혁</a></li>
-                            <li><a href="#">비전</a></li>
-                            <li><a href="#">경영이념</a></li>
-                            <li><a href="#">위치안내1</a></li>
-                            <li><a href="#">위치안내2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">교육과정안내</a>
-                        <ul class="depth2">
-                            <li><a href="#">교육과정1</a></li>
-                            <li><a href="#">교육과정2</a></li>
-                            <li><a href="#">교육과정3</a></li>
-                            <li><a href="#">교육과정4</a></li>
-                            <li><a href="#">주요거래처</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">유치원활동</a>
-                        <ul class="depth2">
-                            <li><a href="#">갤러리형</a></li>
-                            <li><a href="#">웹진형</a></li>
-                            <li><a href="#">요약형</a></li>
-                            <li><a href="#">리스트형</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">온라인입학상담</a></li>
-                    <li><a href="#">커뮤니티</a>
-                        <ul class="depth2">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">자료실</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">자유게시판</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="join_page">
-        <div class="join_box row">
-            <h2>회원가입</h2>
-            <form action="#" method="post" class="join_form"> <!--전송을 눌렀을때 반응해야되는 목록은 form태그로-->
-                <fieldset>
-                    <legend>회원가입양식</legend>
-                    <p class="info_pilsoo pilsoo_item">필수입력</p>
-                    <ul class="info_list">
-                        <li>
-                            <label required class="tit_lbl pilsoo_item" for="name_lbl">작성자명</label>
-                            <div class="info_content">
-                                <input class="w320" type="text" id="name_lbl" placeholder="이름을 입력해 주세요.">
-                            </div>
-                        </li>
-                        <li>
-                            <label required class="tit_lbl pilsoo_item" for="password_lbl">비밀번호</label>
-                            <div class="info_content">
-                                <input class="w320" type="password" id="password_lbl" placeholder="비밀번호를 입력해 주세요.">
-                            </div>
-                        </li>
-                        <li>
-                            <label required class="tit_lbl pilsoo_item" for="passwordok_lbl">비밀번호 확인</label>
-                            <div class="info_content">
-                                <input class="w320" type="password" id="passwordok_lbl" placeholder="비밀번호를 다시 한번 입력해 주세요.">
-                            </div>
-                        </li>
-                        <li>
-                            <label required class="tit_lbl pilsoo_item" for="phone_lbl">연락처</label>
-                            <div class="info_content">
-                                <input class="w320" autofocus type="number" id="phone_lbl" placeholder='휴대폰번호 "-" 없이 숫자만 입력해주세요'> <!--  autofocus는 새로고침 했을 때 자동 커서-->
-                            </div>
-                        </li>
-                        <li>
-                            <label required class="tit_lbl pilsoo_item" for="email_lbl">이메일</label>
-                            <div class="info_content">
-                                <input class="w160" type="text" id="email_lbl">
-                                <span>@</span>
-                                <input class="w160" type="text" id="domain" disabled> <!-- 지정 value의 값이 나오면 disabled의 속성으로 커서가 옮겨짐 -->
-                                <label class="email_box">
+<div id="container">
+        <section id="join_page">
+            <div class="join_box row">
+                <h2>회원가입</h2>
+                <form action="#none" method="POST" class="join_form">
+                    <fieldset>
+                        <legend>회원가입양식</legend>
+                        <p class="info_pilsoo pilsoo_item">필수입력</p>
+                        <ul class="info_list">
+                            <li>
+                                <label for="name_lbl" class="tit_lbl pilsoo_item">작성자명</label>
+                                <div class="info_content">
+                                    <input minlength='2' maxlength='8' required class="w320" type="text" id="name_lbl" placeholder="이름을 입력해 주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="password_lbl" class="tit_lbl pilsoo_item">비밀번호</label>
+                                <div class="info_content">
+                                    <input class="w320" type="password" id="password_lbl" placeholder="비밀번호를 입력해 주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="passwordok_lbl" class="tit_lbl pilsoo_item">비밀번호 확인</label>
+                                <div class="info_content">
+                                    <input class="w320" type="password" id="passwordok_lbl" placeholder="비밀번호를 다시 한번 입력해 주세요.">
+                                </div>
+                            </li>
+                            <li>
+                                <label for="phone_lbl" class="tit_lbl pilsoo_item">연락처</label>
+                                <div class="info_content">
+                                    <input class="w320" type="text" id="phone_lbl" placeholder='휴대폰 번호 "-"없이 숫자만 입력해 주세요'>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="email_lbl" class="tit_lbl pilsoo_item">이메일</label>
+                                <div class="info_content">
+                                    <input class="w160" type="text" id="email_lbl">
+                                    <span>@</span>
+                                    <input class="w160" type="text" id="domain" disabled>
                                     <select id="email_choice" class="w160">
-                                        <option value="nochoice">이메일 선택</option>
+                                        <option value="nochoice">-이메일선택-</option>
                                         <option value="naver.com">네이버</option>
                                         <option value="daum.net">다음</option>
                                         <option value="self">직접입력</option>
                                     </select>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <label class="tit_lbl" for="addr_lbl">주소</label>
-                            <div class="info_content">
-                                <input class="w160 mb3" type="text" id="addr_lbl"><button type="button">우편번호</button><br>
-                                <input class="w70p mb3" type="text" id="addr1"> <span>(도로명주소)</span><br>
-                                <input class="w70p mb3" type="text" id="addr2"> <span>(지번주소)</span><br>
-                                <input class="w70p" type="text" id="addr3"> <span>(나머지주소)</span>
-                            </div>
-                        </li>
-                        <li>
-                            <label class="tit_lbl" for="birthday">생년월일</label>
-                            <div class="info_content">
-                                <input class="w160" type="text" id="birthday" placeholder="0"> <span>년</span>
-                                <select class="w160" id="month_choice">
-                                    <option value="nochoice">선택</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select> <span>월</span>
-                                <input class="w160" type="text" id="birthday" placeholder="0"> <span>일</span>
-                            </div>
-                        </li>
-                        <li>
-                            <label class="tit_lbl">성별</label>
-                            <div class="info_content gender_area">
-                                <input type="radio" name="gender" id="male" value="남">
-                                <label for="male">남</label>
-                                <input type="radio" name="gender" id="female" value="여">
-                                <label for="female">여</label>
-                                <input type="radio" name="gender" id="two" value="둘다">
-                                <label for="two">둘다</label>
-                            </div>
-                        </li>
-                        <li>
-                            <label class="tit_lbl">취미</label>
-                            <div class="info_content hobby_area">
-                                <input type="checkbox" id="all">
-                                <label for="all">전체선택</label>
-                                <input type="checkbox" id="hobby1" name="hobby1" value="등산">
-                                <label for="hobby1">등산</label>
-                                <input type="checkbox" id="hobby2" name="hobby2" value="독서">
-                                <label for="hobby2">독서</label>
-                                <input type="checkbox" id="hobby3" name="hobby3" value="값">
-                                <label for="hobby3">화면에 보여지는 글씨</label>
-                            </div>
-                        </li>
-                        <li>
-                            <label class="tit_lbl" for="query">문의내용</label>
-                            <div class="info_content">
-                                <textarea name="query" id="query" placeholder="간단한 상담요청 사항을 남겨주시면 보다 상세한 상담이 가능합니다. 
-전화상담 희망시 기재부탁드립니다.(20글자 이내)" maxlength="20"></textarea>
-                                <p>남은글자 : <span>20</span>글자</p>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="btn">
-                        <input type="submit" value="전송">
-                        <input type="reset" value="취소">
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="footerMenu">
-            <div class="row">
-                <a href="#">이용약관</a>
-                <a href="#">개인정보취급방침</a>
-                <a href="#">개인정보의 수집 및 이용목적</a>
-                <a href="#">이메일무단수집거부</a>   
+                                </div>
+                            </li>
+                            <li>
+                                <label for="addr_lbl" class="tit_lbl">주소</label>
+                                <div class="info_content">
+                                    <input class="w160 mb3" type="text" id="addr_lbl"> <button type="button">우편번호</button><br>
+                                    <input class="w70p mb3" type="text" id="addr1"> <span>(도로명주소)</span><br>
+                                    <input class="w70p mb3" type="text" id="addr2"> <span>(지번주소)</span><br>
+                                    <input class="w70p" type="text" id="addr3"> <span>(나머지주소)</span>
+                                </div>
+                            </li>
+                            <li>
+                                <label for="birthday" class="tit_lbl">생년월일</label>
+                                <div class="info_content">
+                                    <input class="w160" type="text" id="birthday" placeholder="2000-01-22">
+                                </div>
+                            </li>
+                            <li>
+                                <label class="tit_lbl">성별</label>
+                                <div class="info_content gender_area">
+                                    <input type="radio" name="gender" id="male" vlaue="남">
+                                    <label for="male">남</label>
+                                    <input type="radio" name="gender" id="female" value="여">
+                                    <label for="female">여</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="tit_lbl">취미</label>
+                                <div class="info_content hobby_area">
+                                    <input type="checkbox" id="all">
+                                    <label for="all">전체선택</label>
+                                    <input type="checkbox" id="hobby1" name="hobby1" value="등산">
+                                    <label for="hobby1">등산</label>
+                                    <input type="checkbox" id="hobby2" name="hobby2" value="독서">
+                                    <label for="hobby2">독서</label>
+                                    <input type="checkbox" id="hobby3" name="hobby3" value="낚시">
+                                    <label for="hobby3">낚시</label>
+                                </div>
+                            </li>
+                            <li>
+                                <label class="tit_lbl" for="query">문의내용</label>
+                                <div class="info_content">
+                                    <textarea name="query" id="query" placeholder="간단한 상담요청 사항을 남겨주시면 보다 상세한 상담이 가능합니다. 
+    전화상담 희망시 기재부탁드립니다.(20글자 이내)" maxlength="20"></textarea>
+                                    <p>남은글자 : <span>20</span>글자</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn">
+                            <input type="submit" value="전송">
+                            <input type="reset" value="취소">
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-        </div>  
-        <div class="comInfo">
-            <div class="row">
-                <div class="sns">
-                   <a href="tel:02-1234-5678">
-                    <i class="fas fa-phone-square"></i><span class="blind">콜센터</span>
-                    </a>
-                   <a href="#">
-                    <i class="fas fa-sms"></i><span class="blind">문자전송</span>
-                    </a>
-                   <a href="#">
-                    <i class="fas fa-at"></i><span class="blind">이메일</span>
-                    </a>
-                   <a href="https://goo.gl/maps/JEpBvX41yfujxCTt5" target="_blank"> <!--타겟의 _blank는 링크를 눌렀을 때 창이 꺼지지않고 새창으로 열릴 수 있는 방법-->
-                    <i class="fas fa-map-marked-alt"></i><span class="blind">찾아오는길</span>
-                    </a>
-                </div>
-                <div class="info">
-                    <span> CompanyName</span>
-                    <span> 대표 : 대표이름</span>
-                    <span> 대표번호 : 02-1234-5678</span>
-                    <span> 팩스번호 : 02-2345-6789</span>
-                    <span> 사업자등록번호 : 123-45-12345</span>
-                    <span> 통신판매업신고번호 : 제 2016-서울지역-1234호</span>
-                    <span> 주소 : 서울시 지역구 지명로12</span>
-                </div>
+            <div class="join_after">
+                회원가입이 완료되었습니다.
             </div>
-        </div>
-        <div class="copyright">
-            <div class="row">
-                Copyright &copy; CompanyName Corp. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-
-</body>
-</html>
+        </section>
+</div>

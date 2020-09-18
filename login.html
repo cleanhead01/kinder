@@ -1,195 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 - 새싹유치원</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-    <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<![endif]-->
-    <!-- [if lte IE 8]>
-        8버전보다 작거나 같은
-    <![endif]-->
-    <!--[if lt IE 9]>   
-        9버전보다 작은
-    <![endif]-->
-</head>
-<body>
-    
-    <div class="skip">
-        <a href="#section">본문 바로가기</a> <!-- #section을 하면 section이 있는 구역으로 감 -->
+    <div id="container">
+        <section id="login_page">
+            <div class="login_box row">
+                <h2>로그인</h2>
+                <form action="register.php" method="post" class="login_form">
+                    <fieldset>
+                        <legend>로그인</legend>
+                        <p class="comment">
+                            ※ 아이디/비밀번호를 잊으셨나요? 통합로그인 센터에서 아이디, 비밀번호를 확인하세요.
+                        </p>
+                        <div class="login_content">
+                            <div class="idpw_box">
+                                <label for="id_lbl">아이디</label>
+                                <input type="text" placeholder="아이디입력" id="id_lbl"><br>
+                                <label for="pw_lbl">비밀번호</label>
+                                <input type="password" placeholder="비밀번호입력" id="pw_lbl">
+                            </div>
+                            <button type="submit">로그인</button>
+                            <div class="check">
+                                <input type="checkbox" id="idsave" value="idsave" checked>
+                                <label for="idsave">아이디저장</label>
+                                <input type="checkbox" id="secacc" value="secacc" checked>
+                                <label for="secacc">보안접속</label>
+                            </div>
+                        </div>   
+                    </fieldset>
+                </form>
+            </div>
+        </section>
     </div>
-
-    <header id="header">
-        <div class="topmenu">
-            <div class="row">
-                <div class="sns">
-                    <a href="#"><i class="fas fa-phone-square"></i> <span>02-1234-5678</spa></a>
-                    <a href="#"><i class="fab fa-instagram"></i>
-                        <span class="blind">
-                            인스타그램
-                        </span>
-                    </a>
-                    <a href="#"><i class="fas fa-sms"></i>
-                        <span class="blind">
-                            문자전송
-                        </span>
-                    </a>
-                </div>
-                <div class="search">
-                    <form action="#" method="post">
-                        <fieldset>
-                            <legend>검색</legend>
-                            <input type="text" placeholder="검색어 입력">
-                            <button type="submit">
-                                <span class="blind">검색</span>
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </fieldset>
-                    </form>
-                </div>
-                <div class="login">
-                    <a href="login.html">로그인</a>
-                    <a href="join.html">회원가입</a>
-                    <a href="#">회원1:1문의</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="logoNav row">
-            <h1>
-                <a href="index.html">CompanyName</a>
-            </h1>
-            <div class="open_nav">
-                <span class="blind">메뉴열기</span><i class="fas fa-bars"></i>
-            </div>
-            <div class="close_nav">
-                <span class="blind">메뉴닫기</span>
-                <i class="fas fa-times"></i>
-            </div>
-            <nav class="nav">
-                <ul class="depth1">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html">유치원소개</a>
-                        <ul class="depth2">
-                            <li><a href="#">원장인사말1</a></li>
-                            <li><a href="#">원장인사말2</a></li>
-                            <li><a href="#">연혁</a></li>
-                            <li><a href="#">비전</a></li>
-                            <li><a href="#">경영이념</a></li>
-                            <li><a href="#">위치안내1</a></li>
-                            <li><a href="#">위치안내2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">교육과정안내</a>
-                        <ul class="depth2">
-                            <li><a href="#">교육과정1</a></li>
-                            <li><a href="#">교육과정2</a></li>
-                            <li><a href="#">교육과정3</a></li>
-                            <li><a href="#">교육과정4</a></li>
-                            <li><a href="#">주요거래처</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">유치원활동</a>
-                        <ul class="depth2">
-                            <li><a href="#">갤러리형</a></li>
-                            <li><a href="#">웹진형</a></li>
-                            <li><a href="#">요약형</a></li>
-                            <li><a href="#">리스트형</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">온라인입학상담</a></li>
-                    <li><a href="#">커뮤니티</a>
-                        <ul class="depth2">
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">자료실</a></li>
-                            <li><a href="#">FAQ</a></li>
-                            <li><a href="#">자유게시판</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="login_page">
-        <div class="login_box row">
-            <h2>로그인</h2>
-            <form action="#" method="post" class="login_form"> <!--전송을 눌렀을때 반응해야되는 목록은 form태그로-->
-                <fieldset>  <!--기본적으로 border의 속성을 가지고 태어남 / 보통 none값을 줌-->
-                    <legend>로그인</legend> <!--fieldset 상단 좌측에 큰 문단 제목처럼 나옴 / 보통 display:none값을 줌-->
-                    <p class="comment">
-                        <span>※</span> 아이디/비밀번호를 잊으셨나요?  통합로그인 센터에서 아이디, 비밀번호를 확인하세요.
-                    </p>
-                    <div class="login_content">
-                        <div class="idpw_box">
-                            <label for="id_lbl">아이디</label> <!--for는 input의 id와 연결-->
-                            <input type="text" placeholder="아이디입력" id="id_lbl"><br> <!--id는 label의 for와 연결--> 
-                            <label for="pw_lbl">비밀번호</label> <!--for는 input의 id와 연결-->
-                            <input type="password" placeholder="비밀번호" id="pw_lbl"> <!--id는 label의 for와 연결--> 
-                        </div>
-                        <button type="submit">로그인</button> <!--전송버튼의 type는 submit-->
-                        <div class="check">
-                            <input type="checkbox" id="idsave" value="idsave"> <!--체크박스는 꼭 value를 써야함 나중에 데이터 베이스에서 value값이 idsave면 저장이 되고 idsave값이 아니면 저장이 안되게 해야되기 때문에-->
-                            <label for="idsave">아이디 저장</label>
-                            <input type="checkbox" id="pwsave" value="pwsave">
-                            <label for="pwsave">패스워드 저장</label>
-                            <input type="checkbox" id="autologin" value="autologin" checked>
-                            <label for="autologin">자동 로그인</label>
-                            <input type="checkbox" id="secacc" value="secacc" checked> <!--checked로 미리 체크를 해두는 태그-->
-                            <label for="secacc">보안접속</label>
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-    </section>
-
-    <footer id="footer">
-        <div class="footerMenu">
-            <div class="row">
-                <a href="#">이용약관</a>
-                <a href="#">개인정보취급방침</a>
-                <a href="#">개인정보의 수집 및 이용목적</a>
-                <a href="#">이메일무단수집거부</a>   
-            </div>
-        </div>  
-        <div class="comInfo">
-            <div class="row">
-                <div class="sns">
-                   <a href="tel:02-1234-5678">
-                    <i class="fas fa-phone-square"></i><span class="blind">콜센터</span>
-                    </a>
-                   <a href="#">
-                    <i class="fas fa-sms"></i><span class="blind">문자전송</span>
-                    </a>
-                   <a href="#">
-                    <i class="fas fa-at"></i><span class="blind">이메일</span>
-                    </a>
-                   <a href="https://goo.gl/maps/JEpBvX41yfujxCTt5" target="_blank"> <!--타겟의 _blank는 링크를 눌렀을 때 창이 꺼지지않고 새창으로 열릴 수 있는 방법-->
-                    <i class="fas fa-map-marked-alt"></i><span class="blind">찾아오는길</span>
-                    </a>
-                </div>
-                <div class="info">
-                    <span> CompanyName</span>
-                    <span> 대표 : 대표이름</span>
-                    <span> 대표번호 : 02-1234-5678</span>
-                    <span> 팩스번호 : 02-2345-6789</span>
-                    <span> 사업자등록번호 : 123-45-12345</span>
-                    <span> 통신판매업신고번호 : 제 2016-서울지역-1234호</span>
-                    <span> 주소 : 서울시 지역구 지명로12</span>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="row">
-                Copyright &copy; CompanyName Corp. All Rights Reserved.
-            </div>
-        </div>
-    </footer>
-
-
-</body>
-</html>
