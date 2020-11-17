@@ -3,7 +3,6 @@
 
       <article class="slideOuter">
           <div class="slideInner">
-              <!-- 슬라이드를 연결해야하기 때문에 inner에는 css에서 속성을 주면 안됨 -->
               <div class="slide slide1">
                   <div class="text">
                       <p>새싹유치원1</p>
@@ -32,38 +31,37 @@
               <h2>유치원활동</h2>
               <p><strong>앞선 정보와 신뢰를 최우선</strong> 가치로 삼고 교육과정을 개발하고 있습니다</p>
           </div>
-          <div class="cf actul">
-              <div  class="actli">
+          <ul class="cf">
+              <li>
                   <div>
                       <h3>갤러리형</h3>
                       <p>In 2027 we will continue to use minimal layouts, and complexion reduction</p>
-                      <a href="#">자세히보러가기</a>
+                      <a href="#"><span>자세히보러가기</span><i class="fas fa-plus-square"></i></a>
                   </div>
-                </div>
-              <div  class="actli">
+              </li>
+              <li>
                   <div>
                       <h3>웹진형</h3>
                       <p>In 2027 we will continue to use minimal layouts, and complexion reduction</p>
-                      <a href="#">자세히보러가기</a>
+                      <a href="#"><span>자세히보러가기</span><i class="fas fa-plus-square"></i></a>
                   </div>
-                </div>
-              <div class="actli">
+              </li>
+              <li>
                   <div>
                       <h3>요약형</h3>
                       <p>In 2027 we will continue to use minimal layouts, and complexion reduction</p>
-                      <a href="#">자세히보러가기</a>
+                      <a href="#"><span>자세히보러가기</span><i class="fas fa-plus-square"></i></a>
                   </div>
-              </div>
-              <div class="actli">
+              </li>
+              <li>
                   <div>
                       <h3>리스트형</h3>
                       <p>In 2027 we will continue to use minimal layouts, and complexion reduction</p>
-                      <a href="#">자세히보러가기</a>
+                      <a href="#"><span>자세히보러가기</span><i class="fas fa-plus-square"></i></a>
                   </div>
-              </div>
-            </div>
+              </li>
+          </ul>
       </article>
-      
       <article class="curriInfo row">
           <div class="title">
               <h2>교육과정안내</h2>
@@ -123,6 +121,32 @@
               </div>
           </div>    
       </article>
+
+      <article class="touchcon row">
+        <div class="rotation">
+            <ul>
+                <li>터치1</li>
+                <li>터치1</li>
+                <li>터치1</li>
+                <li>터치1</li>
+            </ul>
+            <ul>
+                <li>터치2</li>
+                <li>터치2</li>
+                <li>터치2</li>
+                <li>터치2</li>
+            </ul>
+            <ul>
+                <li>터치3</li>
+                <li>터치3</li>
+                <li>터치3</li>
+                <li>터치3</li>
+            </ul>
+            <!-- <div class="leftBtn btn">왼쪽</div>
+            <div class="rightBtn btn">오른쪽</div> -->
+        </div>
+      </article>
+
       <article class="review">
           <div class="row">
               <div class="title">
@@ -171,10 +195,8 @@
       </article>
 
       <article class="bestChoice">
-          <div class="overlay">
-              <div class="row">
-                  Your Best Choice! 가족과 사회와 함께 성장하는 교육기관이 되겠습니다
-              </div>
+          <div class="overlay row">
+                  <span>Your Best Choice!</span> <span>가족과 사회와 함께 성장하는</span> 교육기관이 되겠습니다
           </div>
       </article>
 
@@ -213,59 +235,11 @@
 
 <script>
 
-    
-    $(window).scroll(function(){
-        // 일정구역 가면 act li가 올라오기 첫번째 방법
-        var sct = $(this).scrollTop()
-        var actNear = $('.act').offset().top - $(this).height()/2
-        if (sct >= actNear) {
-            // for (var i=0; i<$('.actul .actli').length; i++) {
-            //     $('.actul .actli').eq(i).css({
-            //         animationDelay: i*0.5+'s'
-            //     }).addClass('animate__fadeInUp')
-            // }
-            $('.actul .actli').eq(0).css({
-                animation: 'fadeInUp 1s both 0s'
-            })
-            $('.actul .actli').eq(1).css({
-                animation: 'fadeInUp 1s both 0.5s'
-            })
-            $('.actul .actli').eq(2).css({
-                animation: 'fadeInUp 1s both 1s'
-            })
-            $('.actul .actli').eq(3).css({
-                animation: 'fadeInUp 1s both 1.5s'
-            })
-        } else {
-            // $('.act .actul .actli').removeClass('animate__fadeInUp')
-            $('.actul .actli').eq(0).css({
-                animation: ''
-            })
-            $('.actul .actli').eq(1).css({
-                animation: ''
-            })
-            $('.actul .actli').eq(2).css({
-                animation: ''
-            })
-            $('.actul .actli').eq(3).css({
-                animation: ''
-            })
-        }
-
-
-        // 일정구역 가면 curriBox column이 애니메이션 나타나기 두번째 방법
-        var curriNear = $('.curriInfo').offset().top - $(this).height()/2
-        if (sct >= curriNear) {
-            $('.curriBox').addClass('on')
-        } else {
-            $('.curriBox').removeClass('on')
-        }
-
-    })
+(function($){
 
     $('.slideInner').slick({
-        autoplay: true, // 자동재생
-        autoplaySpeed: 3000, // 간격시간
+        autoplay: true,            
+        autoplaySpeed: 3500, // 간격시간
         dots: true, // 동그라미버튼
         speed: 600, // 바뀌는시간(생략가능)
         slidesToShow: 1, // 보여질슬라이드수(생략가능)
@@ -279,7 +253,34 @@
         arrows: true, // 좌우화살표 사용여부(생략가능)
         prevArrow: '<button class="prevArrow marrow"><i class="fas fa-angle-left"></i></button>',
         nextArrow: '<button class="nextArrow marrow"><i class="fas fa-angle-right"></i></button>',
-
+        responsive:[{
+            breakpoint:1025,  // 1px 큰 값으로 설정해야 1024px 부터 작동됨
+            settings:{
+                arrows:false
+            }
+        }]
     })
+
+    $(".touchcon .lotation ul").on('touchmove', function(){
+        $(this).stop().animate({
+            marginLeft:"-33.33%"
+        }, 500, function(){
+            $(this).appendTo('.lotation').css({
+                marginLeft:"0%"
+            })
+        })
+    })
+
+    var btncount=0;
+    $('.touchcon .leftBtn').on('click', function(){
+        btncount++
+        if ( btncount === $('.touchcon .lotation ul').length )
+        $('.touchcon .lotation ul').animate({
+            marginLeft:"-33.33%"
+        }, 500)
+    })
+
+
+})(jQuery)
 
 </script>

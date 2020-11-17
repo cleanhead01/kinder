@@ -1,9 +1,27 @@
 @charset "utf-8";
 
 #section { padding-top:117px; }
-.slideOuter { height:600px; 
-    position:relative; }
+.slideOuter { height:600px; position:relative; }
+.slideOuter .marrow {
+    position:absolute; top:50%;
+    transform:translateY(-50%);
+    font-size:80px;
+    color:#fff; background:none; border:none }  
+.slideOuter .prevArrow {left:100px; z-Index:999999 }
+.slideOuter .nextArrow {right:100px}
 
+.slideOuter .slick-dots { 
+    position:absolute; bottom:20px;
+    left:50%; 
+    transform:translateX(-50%) }
+.slideOuter .slick-dots li { display:inline-block;  margin:0 5px }    
+.slideOuter .slick-dots li button {
+        width:20px; height:20px; color:#fff;
+        background:#fff; 
+        opacity:0.6;
+        border-radius:50%; border:none }    
+.slideOuter .slick-dots li.slick-active button {
+    opacity:1; }   
 
 .slideInner .slide { 
     height:600px;
@@ -12,19 +30,24 @@
     background-repeat:no-repeat; 
     position:relative
 }
-.slideInner .slide::before {
+.slideInner  .slide:before {
     content:'';
     position:absolute;
     top:0; left:0; bottom:0; right:0;
     background:rgba(0,0,0,0.3);
 }
-.slideInner .slide1 { 
+.slideInner  .slide1 { 
     background-image:url(../images/main-cover1.min.jpg)}
-.slideInner .slide2 { 
+.slideInner  .slide2 { 
     background-image:url(../images/main-cover2.min.jpg)}
-.slideInner .slide > .text { 
-    position:absolute; top:50%; left:50%;
-    transform:translate(-50%, -50%);
+.slideInner  .slide  .text { 
+    position:absolute; 
+    /* 공식 left:50%; transform:translateX(-50%)은 작은화면에서 빈공간이 있음에도 불구하고
+        두줄로 처리되는 문제가 발생하므로 이 공식 대신에,
+        width:100%; text-align:center 공식으로 변경함
+    */
+    top:50%; left:0%; width:100%; 
+    transform:translateY(-50%);  
     text-align:center; color:#fff;
     /* z-index:9999; */
 }
@@ -46,39 +69,6 @@
 .slideInner .text > p:nth-child(3) > a:nth-child(1):hover { 
     background:#ffd23c}
 .slideInner .text > p:nth-child(3) > a:nth-child(2):hover { color:#fff }
-
-/* 화살표 버튼 */
-.slideOuter .marrow {
-    position: absolute; top: 50%;
-    transform: translateY(-50%);
-    font-size: 50px;
-    color: #fff;
-    background: none; border: none;
-}
-.slideOuter .prevArrow {
-    left: 100px; z-index: 99;
-}
-.slideOuter .nextArrow {
-    right: 100px;
-}
-/* 도트 버튼 */
-.slideOuter .slick-dots {
-    position: absolute; bottom: 30px;
-    width: 100%; text-align: center;
-}
-.slideOuter .slick-dots li {
-    display: inline-block;
-}
-.slideOuter .slick-dots li button {
-    width: 15px; height: 15px;
-    border-radius: 50%; border: none;
-    background: #fff; color: transparent;
-    margin: 0px 10px;
-}
-.slideOuter .slick-dots li.slick-active button {
-    background: #333;
-}
-
        
 #section .title h2 { font-size:28px; color:#222;
 margin:20px 0 20px; font-weight:bold;
@@ -100,72 +90,59 @@ text-align:center }
     font-weight:bold }
 
 .act { padding:80px 0 }
-.act .actul .actli { float:left; width:24%;
+.act ul li { float:left; width:24%;
     background-size:auto;
     background-repeat:no-repeat;
     height:186px; margin:0 0.5%; 
     position:relative }
-.act .actul .actli:nth-child(1) {
+.act ul li:nth-child(1) {
     background-image:url(../images/main-business1.min.jpg); }
-.act .actul .actli:nth-child(1):before {
+.act ul li:nth-child(1):before {
     content:''; position:absolute;
     top:0; left:0; right:0; bottom:0;
     background-color: rgba(48, 120, 210, 0.5);
 }
-.act .actul .actli:nth-child(2) {
+.act ul li:nth-child(2) {
     background-image:url(../images/main-business2.min.jpg)
 }
-.act .actul .actli:nth-child(2):before {
+.act ul li:nth-child(2):before {
     content:''; position:absolute;
     top:0; left:0; right:0; bottom:0;
     background-color: rgba(255, 174, 61, 0.6);
 }
-.act .actul .actli:nth-child(3) {
+.act ul li:nth-child(3) {
     background-image:url(../images/main-business3.min.jpg)
 }
-.act .actul .actli:nth-child(3):before {
+.act ul li:nth-child(3):before {
     content:''; position:absolute;
     top:0; left:0; right:0; bottom:0;
     background-color: rgba(48, 205, 210, 0.5);
 }
-.act .actul .actli:nth-child(4) {
+.act ul li:nth-child(4) {
     background-image:url(../images/main-business4.min.jpg)
 }
-.act .actul .actli:nth-child(4):before {
+.act ul li:nth-child(4):before {
     content:''; position:absolute;
     top:0; left:0; right:0; bottom:0;
     background-color: rgba(247, 111, 111, 0.5);
 }
-.act .actul .actli div { 
+.act ul li div { 
     position:absolute; top:10px; left:20px;
     right:20px; bottom:10px; color:#fff; }
-.act .actul .actli div h3 { margin:10px 0; 
+.act ul li div h3 { margin:10px 0; 
     font-size:19.25px; font-weight:bold }    
-.act .actul .actli div p { font-size:14px; margin:15px 0;
+.act ul li div p { font-size:14px; margin:15px 0;
     line-height:1.5 }
-.act .actul .actli div a { padding: 5px 20px;
+.act ul li div a { padding: 5px 20px;
     font-size: 12px; line-height: 1.5;
     border-radius: 3px;  color: #f8f9fa;
     border:1px solid #f8f9fa; 
     letter-spacing:0.5px;
     transition:all 0.5s;
  }
-.act .actul .actli div a:hover { 
-    color:#212529; background-color:#f8f9fa 
-}
-.act .actul {
-    overflow: hidden;
-}
-.act .actul .actli {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-}
-/* .act .actul .actli.animate__fadeInUp {
-    animation-duration: 1s;
-    animation-fill-mode: both;
-} */
-
+.act ul li div a:hover { 
+    color:#212529; background-color:#f8f9fa }
+.act ul li div a i { display:none }
 
 .curriInfo { padding:84px 0 }
 .curriBox > .column { float:left; width:31.66% }
@@ -191,32 +168,17 @@ text-align:center }
     font-weight:bold }   
 .curriBox .copy p { font-weight:bold; 
     font-size:14px; margin:15px 0;
-    line-height:1.5  }  
+    line-height:1.5  }       
 
-.curriBox .column:nth-child(1) {
-    opacity: 0;
-    -webkit-transform: translate3d(-100%, 0, 0);
-    transform: translate3d(-100%, 0, 0);
-}
-.curriBox .column:nth-child(2) {
-    opacity: 0;
-}
-.curriBox .column:nth-child(3) {
-    opacity: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-}
-.curriBox.on .column:nth-child(1) {
-    animation: fadeInLeft 1s both;
-}
-.curriBox.on .column:nth-child(2) {
-    animation: fadeInUp 1s both;
-}
-.curriBox.on .column:nth-child(3) {
-    animation: fadeInRight 1s both;
+
+.touchcon.row { overflow:hidden  }
+.touchcon .rotation {width:300%;  overflow:hidden }
+.touchcon ul { float:left; width:33.33%; overflow:hidden }
+.touchcon ul li { float:left; width:25%; 
+    padding:50px 10px; background:lime;
+    border:1px solid #f00;
 }
 
-    
 
 .review { background:#fdeace; padding:84px 0 }
 .review ul li { float:left; width:31.66%;}
@@ -250,15 +212,15 @@ text-align:center }
 
 .bestChoice { background:url(../images/main-bottomBanner.min.jpg) no-repeat;
     background-size:cover;  
-    height:160px; line-height:160px; 
+    height:160px; 
     background-attachment: fixed;
     background-position:center; 
     font-size:19.25px; color:#fff;
     text-align:center; 
     font-weight:bold; position:relative }
 .bestChoice .overlay { position:absolute; 
-    top:0; left:0; right:0; bottom:0;
-    background:rgba(0,0,0,0.4);  }  
+    top:0; left:0; right:0; bottom:0; 
+    background:rgba(0,0,0,0.5);  line-height:160px; }  
 
 .csNnotice { background:#f5f5f5; padding:84px 0;
     color:#333 }
